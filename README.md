@@ -2,6 +2,10 @@
 
 A cloud-native product catalogue platform built with Go, GraphQL, PostgreSQL, Redis, Docker, Kubernetes and Google Cloud Platform.
 
+## System Architecture
+
+![Architecture](docs/architecture/system-architecture.png)
+
 ## Production Architecture Considerations
 
 This project demonstrates a containerized backend service with a database.  
