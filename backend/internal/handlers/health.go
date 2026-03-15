@@ -1,21 +1,29 @@
 package handlers
 
 import (
+	"database/sql"
 	"encoding/json"
 	"net/http"
 )
 
-type HealthResponse struct {
-	Status string `json:"status"`
+type HealthHandler struct {
+	DB *sql.DB
 }
 
-func HealthHandler(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
+func (h *HealthHandler) Health(w http.ResponseWriter, r *http.Request) {
 
-	response := HealthResponse{
-		Status: "ok",
+	err := h.DB.Ping()
+
+	response := map[string]string{
+		"status": "ok",
 	}
 
-	_ = json.NewEncoder(w).Encode(response)
+	if err != nil {
+		response["database"] = "disconnected"
+	} else {
+		response["database"] = "connected"
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(response)
 }
