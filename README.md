@@ -29,6 +29,21 @@ This project simulates the core building blocks of a production cloud backend sy
 - Deploy on Kubernetes and Google Cloud Platform
 - Provide a lightweight Typescript frontend
 
+## GCP Deployment Architecture
+
+This project was built locally with Docker Compose, but the same application pattern maps cleanly to Google Cloud Platform.
+
+In a GCP deployment model:
+
+- **Cloud Load Balancing** handles incoming HTTPS traffic
+- **Cloud Run** hosts the containerized Go API as a stateless managed service
+- **Cloud SQL for PostgreSQL** provides the managed relational database layer
+- the API connects securely to the database to serve product data and health checks
+
+This architecture shows how the project can evolve from a local containerized backend into a cloud-native deployment aligned with modern GCP application patterns.
+
+![GCP Deployment Architecture](docs/architecture/gcp-deployment-architecture.png)
+
 ## Phase 2 - Basic Go Backend
 
 The backend was scaffolded in Go using the standard `net/http` package.
