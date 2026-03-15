@@ -4,7 +4,7 @@ A cloud-native product catalogue platform built with Go, GraphQL, PostgreSQL, Re
 
 ## System Architecture
 
-![Architecture](docs/architecture/13-system-architecture.png)
+![Architecture](docs/architecture-diagram.png/13-system-architecture.png)
 
 ## Production Architecture Considerations
 
