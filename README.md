@@ -44,6 +44,17 @@ This architecture shows how the project can evolve from a local containerized ba
 
 ![GCP Deployment Architecture](docs/architecture/gcp-deployment-architecture.png)
 
+### Why this GCP architecture matters
+
+This deployment model improves on the local Docker setup by using managed cloud services for scaling, availability, and operational simplicity.
+
+Key benefits include:
+
+- managed API hosting with automatic scaling through **Cloud Run**
+- managed PostgreSQL operations through **Cloud SQL**
+- simplified traffic handling through **Cloud Load Balancing**
+- a cleaner path toward production readiness on Google Cloud
+
 ## Phase 2 - Basic Go Backend
 
 The backend was scaffolded in Go using the standard `net/http` package.
