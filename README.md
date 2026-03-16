@@ -42,7 +42,7 @@ In a GCP deployment model:
 
 This architecture shows how the project can evolve from a local containerized backend into a cloud-native deployment aligned with modern GCP application patterns.
 
-![GCP Deployment Architecture](docs/architecture/gcp-deployment-architecture.png)
+![GCP Deployment Architecture](docs/architecture-diagram.png/gcp-deployment-architecture.png)
 
 ### Why this GCP architecture matters
 
